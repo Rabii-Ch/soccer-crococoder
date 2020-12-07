@@ -1,0 +1,21 @@
+<table class="table table-bordered table-dark">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>lastName</th>
+        <th>disciption</th>
+        <th>delete</th>
+
+
+    </tr>
+    <tr *ngFor='let p of players'>
+        <td>{{p.id}}</td>
+        <td>{{p.name}}</td>
+        <td>{{p.lastname}}</td>
+        <td>{{p.discription}}</td>
+        <td>
+            <button class='btn btn-danger' (click)="delete(p.id)">delete</button>
+        </td>
+    </tr>
+
+</table>

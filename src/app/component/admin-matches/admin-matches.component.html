@@ -1,0 +1,18 @@
+<table class="table table-bordered table-dark">
+    <tr>
+        <th>ID</th>
+        <th>Team One</th>
+        <th>score</th>
+        <th>Team two</th>
+        <th>delete</th>
+    </tr>
+    <tr *ngFor='let m of matchs'>
+        <td>{{m.id}}</td>
+        <td>{{m.teamOne}}</td>
+        <td>{{m.scoreOne}}-{{m.scoreTwo}}</td>
+        <td>{{m.teamTwo}}</td>
+        <td>
+            <button class='btn btn-danger' (click)="delete(m.id)">delete</button>
+        </td>
+    </tr>
+</table>

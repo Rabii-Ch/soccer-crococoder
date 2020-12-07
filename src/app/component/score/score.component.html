@@ -1,0 +1,44 @@
+<div class="container">
+
+
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="d-flex team-vs">
+                <span class="score">
+                    <span [ngStyle]="{
+                    color:resultScore(x.scoreOne,x.scoreTwo)[1]
+                }">{{x.scoreOne}}</span>-
+                <span [ngStyle]="{
+                    color:resultScore(x.scoreTwo,x.scoreOne)[1]
+                }">{{x.scoreTwo}}</span>
+                </span>
+                <div class="team-1 w-50">
+                    <div class="team-details w-100 text-center">
+                        <img src="assets/images/logo_1.png" alt="Image" class="img-fluid">
+                        <h3><span [ngClass]="{
+                            winner: resultScore(x.scoreOne,x.scoreTwo)[0] === 'win',
+                            loser: resultScore(x.scoreOne,x.scoreTwo)[0] === 'loss',
+                            drawer: resultScore(x.scoreOne,x.scoreTwo)[0] === 'draw'
+                        }">{{x.teamOne}}</span> <span>({{resultScore(x.scoreOne,x.scoreTwo)[0]}})</span></h3>
+                        <ul class="list-unstyled">
+                            <li *ngFor='let p of x.playersTeamOne'>{{p}}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="team-2 w-50">
+                    <div class="team-details w-100 text-center">
+                        <h3><span [ngClass]="{
+                            winner: resultScore(x.scoreTwo,x.scoreOne)[0] === 'win',
+                            loser: resultScore(x.scoreTwo,x.scoreOne)[0] === 'loss',
+                            drawer: resultScore(x.scoreTwo,x.scoreOne)[0] === 'draw'
+                        }">{{x.teamTwo}}</span> <span>({{resultScore(x.scoreTwo,x.scoreOne)[0]}})</span></h3>
+                        <ul class="list-unstyled">
+                            <li *ngFor='let p of x.playersTeamTwo'>{{p}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
