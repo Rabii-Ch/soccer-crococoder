@@ -52,4 +52,7 @@ validator: MustMatch('password', 'cPassword')
     };
     reader.readAsDataURL(file);
     }
+    onButtonClicked(){
+      alert('Btn clicked');
+    }
 }
